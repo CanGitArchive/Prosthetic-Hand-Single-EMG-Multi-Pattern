@@ -4,7 +4,8 @@ It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a 
 
 I presented a short part of this project in IJANSER presentation [3] before.
 
-Work includes a pressure sensor to determine if an object is grabbed and how hard it is grabbed by vibrating a small motor over the user's skin to let them know of the hands grip strength so it can be adjusted to preven slipping.
+A very low budged work.
+Work includes a pressure sensor to determine if an object is grabbed and how hard it is grabbed by vibrating a small motor over the user's skin to let them know of the hands grip strength so it can be adjusted to preven slipping. 
 Encoder and kinematic equations to determine the angle of the fingers.
 Motor driver to control the speed.
 Voltage regulators in case there is overvoltage.
@@ -44,6 +45,9 @@ Below are some of the images from the project and a working video demonstration 
 ### Calibration process:
 
 ![OLED](https://github.com/user-attachments/assets/c69b61e3-642b-458f-b2a8-5e7c67c7c2f6)
+
+### Full setup view:
+
 ![Layer 10](https://github.com/user-attachments/assets/25244ae5-5a1d-4c5f-933f-386d501a663f)
 
 
