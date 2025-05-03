@@ -12,7 +12,12 @@ I presented a short part of this project in IJANSER presentation [3] before.
 
 
 Below are some of the images from the project and a working video demonstration I recorded.
+EMG probe connections:
+
 ![EMG Probes](https://github.com/user-attachments/assets/c286c6e3-3aae-4f18-991e-e6e62725d567)
+
+
+
 ![E Circuit](https://github.com/user-attachments/assets/dcf46c61-ebfa-4250-a517-7626e3944b9f)
 ![pcbnew_rA4Q7lQbw3](https://github.com/user-attachments/assets/0701f87a-ca53-46b9-9a88-1d37206926b3)
 ![E Circuit](https://github.com/user-attachments/assets/214b0da7-b913-4b3a-81a4-8d0ce5a349b5)
