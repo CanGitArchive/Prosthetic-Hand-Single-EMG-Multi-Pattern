@@ -5,8 +5,11 @@ It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a 
 I presented a short part of this project in IJANSER presentation [3] before.
 
 [1] Ottobock. (n.d.). System Electric Hand Digital Twin. Alındı Haziran 22, 2024, https://ottobock.com/
+
 [2] Berndt, D.J., & Clifford, J. (1994).
+
 [3] Kadılar, M. C., Toptaş, E. & Akgün, G. (2024). An EMG-based Prosthetic Hand Design and Control Through Dynamic Time Warping. International Journal of Advanced Natural Sciences and Engineering Researches, 8(2), 339-349. 
+
 
 Below are some of the images from the project and a working video demonstration I recorded.
 ![EMG Probes](https://github.com/user-attachments/assets/c286c6e3-3aae-4f18-991e-e6e62725d567)
