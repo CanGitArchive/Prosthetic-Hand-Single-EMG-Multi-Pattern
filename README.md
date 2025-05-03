@@ -1,3 +1,14 @@
+My ottobock [1], inspired a single EMG but multi grip pattern myoelectric prosthetic hand.
+
+It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a speech recognition algorithm, picking 'yes'/'no' like words out of sentences in simple terms.
+
+I presented a short part of this project in IJANSER presentation [3] before.
+
+[1] Ottobock. (n.d.). System Electric Hand Digital Twin. Alındı Haziran 22, 2024, https://ottobock.com/
+[2] Berndt, D.J., & Clifford, J. (1994).
+[3] Kadılar, M. C., Toptaş, E. & Akgün, G. (2024). An EMG-based Prosthetic Hand Design and Control Through Dynamic Time Warping. International Journal of Advanced Natural Sciences and Engineering Researches, 8(2), 339-349. 
+
+Below are some of the images from the project and a working video demonstration I recorded.
 ![EMG Probes](https://github.com/user-attachments/assets/c286c6e3-3aae-4f18-991e-e6e62725d567)
 ![E Circuit](https://github.com/user-attachments/assets/dcf46c61-ebfa-4250-a517-7626e3944b9f)
 ![pcbnew_rA4Q7lQbw3](https://github.com/user-attachments/assets/0701f87a-ca53-46b9-9a88-1d37206926b3)
