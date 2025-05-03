@@ -50,7 +50,7 @@ Below are some of the images from the project and a working video demonstration 
 
 ![Layer 10](https://github.com/user-attachments/assets/25244ae5-5a1d-4c5f-933f-386d501a663f)
 
-### Recording of me using the prostehtic hand, demonstrating the signal to movement.
+### Recording of me using the prostehtic hand, demonstrating the signal to movement:
 
 https://github.com/user-attachments/assets/ee5b2b8d-1e6a-491c-984f-f104147b91c5
 
