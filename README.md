@@ -4,6 +4,17 @@ It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a 
 
 I presented a short part of this project in IJANSER presentation [3] before.
 
+Work includes a pressure sensor to determine if an object is grabbed and how hard it is grabbed by vibrating a small motor over the user's skin to let them know of the hands grip strength so it can be adjusted to preven slipping.
+Encoder and kinematic equations to determine the angle of the fingers.
+Motor driver to control the speed.
+Voltage regulators in case there is overvoltage.
+WIP battery charge indicator.
+Calibration UI installed with buttons.
+Manual overwrite with buttons.
+Multiple possible connections to EMG and motor units.
+
+Work includes C++ on ESP32, double sided hobby work on a circuit, drawing of the circuit, 3d printing, mathematical algorithm uses over code and understanding of literature.
+
 [1] Ottobock. (n.d.). System Electric Hand Digital Twin. Alındı Haziran 22, 2024, https://ottobock.com/
 
 [2] Berndt, D.J., & Clifford, J. (1994).
@@ -13,14 +24,20 @@ I presented a short part of this project in IJANSER presentation [3] before.
 
 Below are some of the images from the project and a working video demonstration I recorded.
 
-EMG probe connections:
+### EMG probe connections:
 
 ![EMG Probes](https://github.com/user-attachments/assets/c286c6e3-3aae-4f18-991e-e6e62725d567)
 
 ### Circuit topdown view:
 
 ![E Circuit](https://github.com/user-attachments/assets/dcf46c61-ebfa-4250-a517-7626e3944b9f)
+
+### PCB Drawing:
+
 ![pcbnew_rA4Q7lQbw3](https://github.com/user-attachments/assets/0701f87a-ca53-46b9-9a88-1d37206926b3)
+
+
+
 ![E Circuit](https://github.com/user-attachments/assets/214b0da7-b913-4b3a-81a4-8d0ce5a349b5)
 ![3DView](https://github.com/user-attachments/assets/ef785796-5f56-4458-9748-d2fed3997954)
 ![OLED](https://github.com/user-attachments/assets/c69b61e3-642b-458f-b2a8-5e7c67c7c2f6)
