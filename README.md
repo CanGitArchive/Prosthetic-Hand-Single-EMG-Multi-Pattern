@@ -97,9 +97,11 @@
 This is a **research prototype**, **not** a medical device. Use at your own risk.
 License: **MIT** (or your preferred license).
 
-## Cite this Work
+## Article(s)
 
-If you use this project, please cite:
+Published:
+
+In progress:
 **Kadılar, M.C.; Toptaş, E.; Akgün, G.** “Impulsive pattern recognition of a myoelectric hand via Dynamic Time Warping,” *IEEE Trans. Med. Robotics and Bionics*, 2025. (Preprint/PDF in `/docs`)
 
 ```
