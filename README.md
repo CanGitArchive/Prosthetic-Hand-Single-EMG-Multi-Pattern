@@ -55,7 +55,7 @@
 * 1× **Motor driver** (ESP32-compatible)
 * **Power** (battery or bench) • **Wires** • **Fasteners** • **SD card** (optional logging)
 
-> Full BOM with part numbers: **[`BOM.md`]**
+See **[BOM.md](./BOM.md)** for prices (TRY, 2024) and USD/CAD conversions.
 
 ## Quickstart
 
