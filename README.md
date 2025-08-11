@@ -1,6 +1,7 @@
 ### TL;DR: 1-minute demo:
 
 ![demo](https://github.com/user-attachments/assets/799b33aa-3dcf-4b50-bae4-261e95a23754)
+
 [https://github.com/user-attachments/assets/ee5b2b8d-1e6a-491c-984f-f104147b91c5](https://youtu.be/wjzd32FGVR0)
 
 My ottobock [1], inspired a single EMG but multi grip pattern myoelectric prosthetic hand.
