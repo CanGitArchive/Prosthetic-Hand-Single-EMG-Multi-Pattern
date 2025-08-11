@@ -1,8 +1,6 @@
 ### TL;DR: 1-minute demo:
 
 ![demo](https://github.com/user-attachments/assets/799b33aa-3dcf-4b50-bae4-261e95a23754)
-### TL;DR: 1-minute demo
-
 [![Watch the demo](https://img.youtube.com/vi/wjzd32FGVR0/hqdefault.jpg)](https://youtu.be/wjzd32FGVR0)
 > Control a multi-grip prosthetic hand using **one** EMG sensor by matching brief muscle “impulses” with **DTW** on an **ESP32**. Four grips via binary impulse patterns (**00, 01, 10, 11**). ~**92%** accuracy in tests; **~414–644 ms** impulse-to-motion latency.
 
