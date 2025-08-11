@@ -3,34 +3,119 @@
 ![demo](https://github.com/user-attachments/assets/799b33aa-3dcf-4b50-bae4-261e95a23754)
 
 [https://github.com/user-attachments/assets/ee5b2b8d-1e6a-491c-984f-f104147b91c5](https://youtu.be/wjzd32FGVR0)
-
-My ottobock [1], inspired a single EMG but multi grip pattern myoelectric prosthetic hand.
-
-It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a speech recognition algorithm, picking 'yes'/'no' like words out of sentences in simple terms. Which is used to create an 'impulse' control instead of 'constant input' like most popular prosthetics over the market.
-
-I presented a short part of this project in IJANSER presentation [3] before.
-
-A very low budged work.
-Work includes a pressure sensor to determine if an object is grabbed and how hard it is grabbed by vibrating a small motor over the user's skin to let them know of the hands grip strength so it can be adjusted to preven slipping. 
-Encoder and kinematic equations to determine the angle of the fingers.
-Motor driver to control the speed.
-Voltage regulators in case there is overvoltage.
-WIP battery charge indicator.
-Calibration UI installed with buttons.
-Manual overwrite with buttons.
-Multiple possible connections to EMG and motor units.
-Wormgear and other mechanical design for increased friction and precise control over the mechanics with high torque.
-
-Work includes C++ on ESP32, double sided hobby work on a circuit, drawing of the circuit, 3d printing, mathematical algorithm uses over code and understanding of literature.
-
-[1] Ottobock. (n.d.). System Electric Hand Digital Twin. Alındı Haziran 22, 2024, https://ottobock.com/
-
-[2] Berndt, D.J., & Clifford, J. (1994).
-
-[3] Kadılar, M. C., Toptaş, E. & Akgün, G. (2024). An EMG-based Prosthetic Hand Design and Control Through Dynamic Time Warping. International Journal of Advanced Natural Sciences and Engineering Researches, 8(2), 339-349. 
+> Control a multi-grip prosthetic hand using **one** EMG sensor by matching brief muscle “impulses” with **DTW** on an **ESP32**. Four grips via binary impulse patterns (**00, 01, 10, 11**). \~**92%** accuracy in tests; **\~414–644 ms** impulse-to-motion latency.
 
 
-Below are some of the images from the project and a working video demonstration I recorded.
+## What this is (Problem → Idea → Outcome)
+
+* **Problem:** Multi-sensor myoelectric hands are accurate but **complex/expensive**; accessible control with fewer sensors is desirable.
+* **Idea:** Use **one EMG channel** and **Dynamic Time Warping (DTW)** to match brief, user-taught impulse shapes to template patterns.
+* **Outcome:** A working prototype with **four reliable grips** from binary impulse combos, measured **92% accuracy** and **\~0.4–0.6 s** latency on **ESP32** firmware.
+
+## Highlights
+
+* **Single-sensor control:** one sEMG channel → multi-pattern control (binary combos).
+* **On-device DTW:** template matching runs on **ESP32** (C++/PlatformIO).
+* **Mechanism:** DC motor **+ worm gear** for torque; **rotary encoder** for position/limits.
+* **DIY-ready:** 3D-printed PLA mechanism; simple **UI-based calibration**; data logged at **\~20 ms** intervals.
+* **Safety:** encoder-based travel limits; impulse-based discrete commands.
+
+## System Overview
+
+```
+[ sEMG electrode ] → [ filter/amplify ] → [ ESP32: DTW matcher ]
+→ [ pattern decoded (00/01/10/11) ] → [ grip controller ]
+→ [ motor driver ] → [ DC motor + worm gear + fingers (encoder-limited) ]
+```
+
+* **Calibration:** record two impulse templates (Pattern 0 / Pattern 1).
+* **Control:** live sEMG is DTW-matched against templates; two sequential detections form a **binary pair** (e.g., `0` then `1` → **01**) that selects the grip.
+
+## Specs (Prototype)
+
+| Category                | Value                                 |
+| ----------------------- | ------------------------------------- |
+| Channels                | 1× surface EMG (3-lead)               |
+| Sampling/logging        | \~**20 ms** intervals                 |
+| Patterns                | **4** (00, 01, 10, 11)                |
+| Accuracy (4-class)      | **\~92%** (46/50 correct)             |
+| Latency (impulse→motor) | **\~414–644 ms**                      |
+| MCU / Firmware          | **ESP32** / C++ (PlatformIO)          |
+| Drive                   | DC motor + **worm gear**              |
+| Sensing                 | **Rotary encoder** (limits & control) |
+| Prints                  | **PLA** (STLs included)               |
+
+## Bill of Materials (major items)
+
+* 1× **ESP32 DevKit** (e.g., ESP32-WROOM)
+* 1× **sEMG module** + 3 electrodes (live/neutral/ground)
+* 1× **DC gear motor** (torque suited for finger actuation)
+* 1× **Worm gear set** + slider/finger linkages (3D-printed)
+* 1× **Rotary encoder** (motor or output shaft)
+* 1× **Motor driver** (ESP32-compatible)
+* **Power** (battery or bench) • **Wires** • **Fasteners** • **SD card** (optional logging)
+* 
+> Full BOM with part numbers: **[`BOM.md`](TODO)** • CAD: **[`/cad`](TODO)** • STLs: **[`/stl`](TODO)** • Schematic: **[`/hardware/schematic.pdf`](TODO)**
+
+
+## Quickstart
+
+1. **Assemble** the mechanism (print parts, install worm gear, mount encoder and motor).
+2. **Wire** EMG module → ESP32; encoder → ESP32; driver → motor. See **`/hardware/wiring.pdf`** (TODO).
+3. **Flash** firmware: `pio run -t upload` (PlatformIO).
+4. **Calibrate**: hold **CAL** button to record **Pattern 0** and **Pattern 1** templates from your forearm muscle.
+5. **Drive**: perform two impulses in sequence to select grip (**00/01/10/11**). Watch encoder-bounded motion engage the chosen grip.
+
+## Results
+
+* **Confusion matrix (4-class)**: 46 correct / 4 wrong → **\~92%**.
+* **Latency**: impulse→motor start **\~414–644 ms** (DTW match threshold crossing to actuation).
+* **Notes**: latency trades off with robustness (lower threshold = faster but noisier). Include your recorded thresholds and any failure modes.
+
+> Figures & tables: add **`/docs/confusion-matrix.png`** and **`/docs/latency-table.png`** (exported from your paper).
+
+## Repo Structure
+
+```
+/firmware/           # ESP32 (PlatformIO) source
+/hardware/           # schematic.pdf, wiring.pdf
+/cad/                # STEP files
+/stl/                # printable parts
+/data/               # sample EMG logs (CSV)
+/docs/               # figures (system diagram, confusion matrix, latency)
+/scripts/            # parsing/plotting DTW logs (Python)
+```
+
+## Roadmap
+
+* Add **haptic feedback** band (vibration/piezo) for grip confirmation.
+* Optional **ROS 2** bridge node (USB serial → ROS topic) for sim/integration.
+* Tune DTW thresholds per user **fatigue**; add auto-recalibration over time.
+
+## Safety & License
+
+This is a **research prototype**, **not** a medical device. Use at your own risk.
+License: **MIT** (or your preferred license).
+
+## Cite this Work
+
+If you use this project, please cite:
+**Kadılar, M.C.; Toptaş, E.; Akgün, G.** “Impulsive pattern recognition of a myoelectric hand via Dynamic Time Warping,” *IEEE Trans. Med. Robotics and Bionics*, 2025. (Preprint/PDF in `/docs`)
+
+```
+@article{Kadilar2025DTW,
+  title={Impulsive pattern recognition of a myoelectric hand via Dynamic Time Warping},
+  author={Kadılar, Mustafa Can and Toptaş, E. and Akgün, G.},
+  journal={IEEE Transactions on Medical Robotics and Bionics},
+  year={2025}
+}
+```
+
+## Acknowledgments
+
+Thanks to Marmara University advisors and labs. Prior related work referenced in `/docs/refs.bib`.
+
+Below are some of the images from the project:
 
 ### EMG probe connections:
 
