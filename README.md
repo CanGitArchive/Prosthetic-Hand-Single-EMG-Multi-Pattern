@@ -49,6 +49,14 @@
 | Sensing                 | **Rotary encoder** (limits & control) |
 | Prints                  | **PLA** (STLs included)               |
 
+
+## Quickstart
+1. **Assemble** the mechanism (print parts, install worm gear, mount encoder and motor).
+2. **Wire** EMG module → ESP32; encoder → ESP32; driver → motor.
+3. **Flash**: `pio run -t upload` (PlatformIO).
+4. **Calibrate**: record **Pattern 0** and **Pattern 1** templates.
+5. **Drive**: perform two impulses to select grip (**00/01/10/11**). Motion is **encoder-limited**.
+
 ## Bill of Materials (major items)
 
 * 1× **ESP32 DevKit** (e.g., ESP32-WROOM)
@@ -60,14 +68,6 @@
 * **Power** (battery or bench) • **Wires** • **Fasteners** • **SD card** (optional logging)
 
 See **[BOM.md](./BOM.md)** for prices (TRY, 2024) and USD/CAD conversions.
-
-## Quickstart
-
-1. **Assemble** the mechanism (print parts, install worm gear, mount encoder and motor).
-2. **Wire** EMG module → ESP32; encoder → ESP32; driver → motor. See below for the images.
-3. **Flash** firmware: `pio run -t upload` (PlatformIO).
-4. **Calibrate**: hold **CAL** button to record **Pattern 0** and **Pattern 1** templates from your forearm muscle.
-5. **Drive**: perform two impulses in sequence to select grip (**00/01/10/11**). Watch encoder-bounded motion engage the chosen grip.
 
 ## Results
 
