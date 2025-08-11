@@ -1,3 +1,7 @@
+### TL;DR: 1-minute demo:
+
+[https://github.com/user-attachments/assets/ee5b2b8d-1e6a-491c-984f-f104147b91c5](https://youtu.be/wjzd32FGVR0)
+
 My ottobock [1], inspired a single EMG but multi grip pattern myoelectric prosthetic hand.
 
 It uses an algorithm called DTW (Dynamic Time Warping) [2], which normally is a speech recognition algorithm, picking 'yes'/'no' like words out of sentences in simple terms. Which is used to create an 'impulse' control instead of 'constant input' like most popular prosthetics over the market.
@@ -50,7 +54,5 @@ Below are some of the images from the project and a working video demonstration 
 
 ![Layer 10](https://github.com/user-attachments/assets/25244ae5-5a1d-4c5f-933f-386d501a663f)
 
-### Recording of me using the prostehtic hand, demonstrating the signal to movement:
 
-https://github.com/user-attachments/assets/ee5b2b8d-1e6a-491c-984f-f104147b91c5
 
