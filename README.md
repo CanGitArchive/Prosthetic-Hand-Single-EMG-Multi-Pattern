@@ -98,14 +98,14 @@ This is a **research prototype**, **not** a medical device. Use at your own risk
 License: **MIT** (or your preferred license).
 
 ## Article(s)
-```
-Published:
+
+### Published:
 KADILAR, M. C., TOPTAŞ, E., & AKGÜN, G. (2024). An EMG-based Prosthetic Hand Design and Control Through Dynamic Time Warping. International Journal of Advanced Natural Sciences and Engineering Researches, 8(2), 339–349. Retrieved from https://as-proceeding.com/index.php/ijanser/article/view/1728
 
-In progress:
+### In progress:
 **Kadılar, M.C.; Toptaş, E.; Akgün, G.** “Impulsive pattern recognition of a myoelectric hand via Dynamic Time Warping,” *IEEE Trans. Med. Robotics and Bionics*, 2025. (Preprint/PDF in `/docs`)
 https://doi.org/10.48550/arXiv.2504.15256
-```
+
 
 ## Acknowledgments
 
